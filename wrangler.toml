@@ -1,0 +1,14 @@
+name = "telegram-group-guard-bot"
+main = "worker.js"
+compatibility_date = "2024-09-01"
+
+# اربط الـ KV namespace بعد إنشائه بالأمر:
+#   wrangler kv namespace create BOT_KV
+# ثم ضع الـ id الذي يعطيك إياه هنا:
+kv_namespaces = [
+  { binding = "BOT_KV", id = "PUT_YOUR_KV_NAMESPACE_ID_HERE" }
+]
+
+# المتغيرات غير السرية يمكن وضعها هنا، لكن يفضل استخدام wrangler secret put للأسرار
+[vars]
+# DEV_ID = "123456789"   # يفضل وضعه كسر (secret) بدلاً من هنا
